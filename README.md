@@ -1,0 +1,49 @@
+# textlint-rule-en-spell
+
+A textlint rule to check English spelling. The dictionary is included. 
+
+## Install
+
+Install with [npm](https://www.npmjs.com/):
+
+    npm install textlint-rule-en-spell
+
+## Usage
+
+Via `.textlintrc`(Recommended)
+
+```json
+{
+    "rules": {
+        "en-spell": true
+    }
+}
+```
+
+Via CLI
+
+```
+textlint --rule en-spell README.md
+```
+
+### Build
+
+Builds source codes for publish to the `lib` folder.
+You can write ES2015+ source codes in `src/` folder.
+
+    npm run build
+
+### Tests
+
+Run test code in `test` folder.
+Test textlint rule by [textlint-tester](https://github.com/textlint/textlint-tester).
+
+    npm test
+
+## Disclaimer
+
+Please see [DISCLAIMER.md](https://github.com/blue-hood/textlint-rule-en-spell/blob/master/DISCLAIMER.md).
+
+## License
+
+MIT © Hood
