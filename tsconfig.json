@@ -1,20 +1,15 @@
 {
   "compilerOptions": {
-    /* Basic Options */
+    "declaration": true,
+    "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "target": "es2015",
-    /* Strict Type-Checking Options */
-    "strict": true,
-    /* Additional Checks */
-    /* Report errors on unused locals. */
-    "noUnusedLocals": true,
-    /* Report errors on unused parameters. */
-    "noUnusedParameters": true,
-    /* Report error when not all code paths in function return a value. */
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    /* Report errors for fallthrough cases in switch statement. */
-    "noFallthroughCasesInSwitch": true
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "lib",
+    "strict": true,
+    "target": "es2015"
   }
 }
