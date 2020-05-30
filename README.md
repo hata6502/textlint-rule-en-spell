@@ -1,11 +1,14 @@
 # textlint-rule-en-spell
 
+[![textlint rule](https://img.shields.io/badge/textlint-fixable-green.svg?style=social)](https://textlint.github.io/)
+
 A textlint rule to check English spelling. The dictionary is included. 
 
-Input: "spall check"
+Input: spall check. auto fix typimg.
 
 ```
-1:1  ✓ error  spall => pall, shall, small, spell, spill, stall  en-spell
+1:1   error    spall => pall, shall, small, spell, spill, stall  en-spell
+1:23  ✓ error  typimg => typing                                  en-spell
 ```
 
 ## Install
