@@ -11,7 +11,7 @@ const reporter: TextlintRuleReporter = (context) => {
 
   return {
     [Syntax.Str](node) {
-      const regex = /\w+/g;
+      const regex = /[a-zA-Z][a-zA-Z0-9]*/g;
       const text = getSource(node);
       let word;
 
