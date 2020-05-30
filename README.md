@@ -2,6 +2,12 @@
 
 A textlint rule to check English spelling. The dictionary is included. 
 
+Input: "spall check"
+
+```
+1:1  ✓ error  spall => pall, shall, small, spell, spill, stall  en-spell
+```
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
