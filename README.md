@@ -4,11 +4,8 @@
 
 A textlint rule to check English spelling. The dictionary is included. 
 
-Input: spall check. auto fix typimg.
-
 ```
-1:1   error    spall => pall, shall, small, spell, spill, stall  en-spell
-1:23  ✓ error  typimg => typing                                  en-spell
+1:1  ✓ error  typimg => typing                                  en-spell
 ```
 
 ## Install

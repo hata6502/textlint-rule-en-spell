@@ -18,16 +18,14 @@ const reporter: TextlintRuleReporter = (context) => {
       while (word = regex.exec(text)) {
         const suggest = spell.suggest(word[0]);
 
-        if (suggest.length === 0) {
+        if (suggest.length !== 1) {
           continue;
         }
 
         const ruleError = new RuleError(`${word[0]} => ${suggest.join(', ')}`, {
           index: word.index,
-          fix: suggest.length === 1 && fixer.replaceTextRange(
-            [word.index, word.index + word[0].length],
-            suggest[0]
-          ) || undefined
+          fix: fixer.replaceTextRange([word.index, word.index + word[0].length], suggest[0])
+            || undefined
         });
 
         report(node, ruleError);
