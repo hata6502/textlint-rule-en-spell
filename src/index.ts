@@ -3,6 +3,7 @@ import aff from 'dictionary-en/index.aff';
 import dic from 'dictionary-en/index.dic';
 // @ts-ignore
 import nspell from 'nspell';
+import urlRegex from 'url-regex';
 
 const spell = nspell(aff, dic);
 
@@ -11,8 +12,13 @@ const reporter: TextlintRuleReporter = (context) => {
 
   return {
     [Syntax.Str](node) {
+      let text = getSource(node);
+
+      text.match(urlRegex())?.forEach(match => {
+        text = text.replace(match, ' '.repeat(match.length));
+      });
+
       const regex = /[a-zA-Z][a-zA-Z0-9]*/g;
-      const text = getSource(node);
       let word;
 
       while (word = regex.exec(text)) {
