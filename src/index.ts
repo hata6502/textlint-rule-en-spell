@@ -1,9 +1,10 @@
 import { TextlintRuleModule, TextlintRuleReporter } from "@textlint/types";
 import aff from 'dictionary-en/index.aff';
 import dic from 'dictionary-en/index.dic';
-// @ts-ignore
+// @ts-expect-error
 import nspell from 'nspell';
-import urlRegex from 'url-regex';
+// @ts-expect-error
+import urlRegexSafe from 'url-regex-safe';
 
 const spell = nspell(aff, dic);
 
@@ -14,7 +15,7 @@ const reporter: TextlintRuleReporter = (context) => {
     [Syntax.Str](node) {
       let text = getSource(node);
 
-      text.match(urlRegex())?.forEach(match => {
+      text.match(urlRegexSafe())?.forEach(match => {
         text = text.replace(match, ' '.repeat(match.length));
       });
 
