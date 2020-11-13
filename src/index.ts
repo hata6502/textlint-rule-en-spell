@@ -29,10 +29,9 @@ const reporter: TextlintRuleReporter = (context) => {
           continue;
         }
 
-        const ruleError = new RuleError(`${word[0]} => ${suggest.join(', ')}`, {
+        const ruleError = new RuleError(`${word[0]} => ${suggest[0]}`, {
           index: word.index,
           fix: fixer.replaceTextRange([word.index, word.index + word[0].length], suggest[0])
-            || undefined
         });
 
         report(node, ruleError);
