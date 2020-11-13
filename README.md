@@ -26,6 +26,18 @@ Via `.textlintrc`(Recommended)
 }
 ```
 
+with [TextlintRuleEnSpellOptions](https://github.com/hata6502/textlint-rule-en-spell/blob/master/src/index.ts)
+
+```json
+{
+    "rules": {
+        "en-spell": {
+            "personalDictionary": ["foo", "bar/color", "*baz"]
+        }
+    }
+}
+```
+
 Via CLI
 
 ```

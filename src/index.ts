@@ -6,10 +6,22 @@ import nspell from 'nspell';
 // @ts-expect-error
 import urlRegexSafe from 'url-regex-safe';
 
-const spell = nspell(aff, dic);
+interface TextlintRuleEnSpellOptions {
+  /** https://github.com/wooorm/nspell#nspellpersonaldic */
+  personalDictionary: string[];
+}
 
-const reporter: TextlintRuleReporter = (context) => {
+const reporter: TextlintRuleReporter = (context, userOptions) => {
   const { fixer, getSource, report, RuleError, Syntax } = context;
+
+  const options: TextlintRuleEnSpellOptions = {
+    personalDictionary: [],
+    ...userOptions
+  };
+
+  const spell = nspell(aff, dic);
+
+  spell.personal(options.personalDictionary.join('\n'));
 
   return {
     [Syntax.Str](node) {
@@ -46,3 +58,4 @@ const module: TextlintRuleModule = {
 };
 
 export default module;
+export type { TextlintRuleEnSpellOptions };
