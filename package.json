@@ -1,6 +1,6 @@
 {
   "name": "textlint-rule-en-spell",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A textlint rule to check English spelling. The dictionary is included. ",
   "keywords": [
     "textlintrule"
@@ -12,6 +12,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blue-hood/textlint-rule-en-spell.git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/hata6502"
   },
   "license": "MIT",
   "author": "Hood <hato6502@gmail.com> (https://github.com/blue-hood)",
